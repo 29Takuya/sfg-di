@@ -1,0 +1,25 @@
+package takuya.springframework.sfgdi.controllers;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import takuya.springframework.sfgdi.services.GreetingServiceImpl;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class PropertyInjectedControllerTest {
+
+    PropertyInjectedController controller;
+
+    @BeforeEach
+    void setUp() {
+        controller = new PropertyInjectedController();
+        controller.greetingService = new GreetingServiceImpl();
+    }
+
+    @Test
+    void testGetGreeting() {
+
+        System.out.println(controller.getGreeting());
+
+    }
+}
